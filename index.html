@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>une brochure - Alaïa</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="deaprt.js" defer></script>
+</head>
+<body>
+       <!-- ===================================== -->
+    <!-- Valeur ajoutée      -->
+    <!--   Sources externes :
+        IA- required : Pour garantir que les champs obligatoires sont remplis
+        IA- pattern  : Pour valider les formats complexes (noms, téléphone, code postal)
+        IA- placeholder : Pour guider l'utilisateur avec des exemples concrets
+    -->
+    <header>
+        <h1>Commander une brochure informative gratuite</h1>
+    </header>  
+    <main id="main">
+        <form action="#" method="post">
+            <!-- Section Format de la brochure -->
+ <fieldset> 
+    <legend>Format de la brochure</legend>
+    <div class="radio-group">
+        
+        <!-- Format Imprimé -->
+        <ul>
+           <li>
+            <input type="radio" id="format_imprime" name="format" value="imprimé" >
+            <label for="format_imprime">
+            <img class="format-icon" src="icones/paper-file-icon.png" alt="Icône format imprimé">
+            <span>
+                imprimé
+            </span>
+           </label>
+          </li>
+        
+        <!-- Option PDF -->
+        
+          <li>
+            <input type="radio" id="format_pdf" name="format" value="pdf" >
+            <label for="format_pdf">
+            <img class="format-icon" src="icones/pdf-file-icon.png" alt="Icône format PDF"
+                 > <span>PDF</span>
+            
+           </label>
+          </li>
+        
+        <!-- Option ePub -->
+        
+          <li>
+            <input type="radio" id="format_epub" name="format" value="epub" >
+            <label for="format_epub">
+            <img class="format-icon" src="icones/epub-file-icon.png" alt="Icône format ePub" >
+            <span>EPUB</span>
+         </label>
+         </li>
+      </ul>
+    </div>
+</fieldset>
+
+            <!-- Section 2: Informations de contact -->
+            <fieldset>
+                <legend>Informations de contact</legend>
+                
+                <div class="input-group">
+                    <label for="prenom">Prénom *</label>
+                    <input type="text" id="prenom" name="prenom" required 
+                           pattern="^[\p{L}\s\-']+$" 
+                           title="Lettres, espaces, tirets et apostrophes uniquement">
+                </div>
+                
+                <diV class="input-group">
+                    <label for="nom">Nom *</label>
+                    <input type="text" id="nom" name="nom" required pattern="^[\p{L}\s\-']+$" title="Lettres, espaces, tirets et apostrophes uniquement">
+                </diV>
+                
+                <div class="input-group">
+                    <label for="courriel">Courriel *</label>
+                    <input type="email" id="courriel" name="courriel" required placeholder="exemple@domaine.com" title="Format valide : exemple@domaine.com">
+                </div>
+                
+                <div class="input-group">
+                    <label>Téléphone *</label>
+                    <div class="phone-input">
+                        <input type="tel" id="code-regional" name="code_regional" 
+                               required pattern="[0-9]{3}" title="3 chiffres" placeholder="418" maxlength="3">
+                        <span>-</span>
+                        <input type="tel" id="numero" name="numero" 
+                               required pattern="[0-9]{7}" title="7 chiffres" placeholder="1234567" maxlength="7">
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Section 3: Informations postales -->
+            <fieldset>
+                <legend>Informations postales</legend>
+                
+                <div class="input-group">
+                    <label for="adresse">Adresse *</label>
+                    <input type="text" id="adresse" name="adresse" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="pays">Pays *</label>
+                    <select id="pays" name="pays" required>
+                        <option value="">Sélectionnez un pays</option>
+                        <option value="CA">Canada</option>
+                        <option value="US">États-Unis</option>
+                        <option value="CI">Côte d'Ivoire</option>
+                        <option value="FR">Fance</option>
+                    </select>
+                </div>
+            
+                <div class="input-group">
+                    <label for="province">Province/État *</label>
+                    <select id="province" name="province" required>
+                        <option value="">Sélectionnez d'abord un pays</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label for="code_postal">Code postal *</label>
+                    <input type="text" id="code_postal" name="code_postal" required 
+                           pattern="[A-Za-z][0-9][A-Za-z][0-9][A-Za-z][0-9]|[0-9]{5}" 
+                           title="Format canadien (A1A1A1) ou américain (11111)">
+                </div>
+            </fieldset>
+
+            <!-- Case à cocher et bouton -->
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" name="newsletter">
+                    Je désire recevoir des informations mensuelles par courriel
+                </label>
+            </div>
+            
+            <button type="submit" class="btn-commander">Commander</button>
+        </form>
+    </main>
+    
+    <footer role="content-info">
+        <p>Intégration 2 – session d’hiver 2025</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,217 @@
+:root {
+    --couleur-principale: #3498db; /* Bleu */
+    --couleur-secondaire: #f0f0f0; /* Gris clair */
+    --couleur-texte: #333; /* Gris foncé */
+    --couleur-erreur: #e74c3c; /* Rouge */
+  }
+  main { 
+    background-color: var(--couleur-secondaire); 
+}
+  body {
+    font-family: sans-serif;
+    background-color: var(--couleur-secondaire);
+    color: var(--couleur-texte);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  header, main, footer {
+    width: 90%;
+    max-width: 800px;
+    margin: 1em auto;
+    padding: 1em;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  header h1 {
+    text-align: center;
+    margin-bottom: 1em;
+    color: var(--couleur-principale);
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1em;
+    margin-bottom: 1em;
+  }
+  
+  legend {
+    font-weight: bold;
+    padding: 0 10px;
+  }
+  
+  .radio-group, .input-group, .checkbox-group {
+    margin-bottom: 1em;
+  }
+  
+  .radio-group label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 1em;
+    cursor: pointer;
+  }
+  
+  .radio-group input[type="radio"] {
+    margin-right: 0.5em;
+  }
+  
+  .format-icon {
+    width: 54px;
+    height: 54px;
+    margin-right: 0.5em;
+    
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+  
+  .input-group input[type="text"],
+  .input-group input[type="email"],
+  .input-group input[type="tel"],
+  .input-group select {
+    width: calc(100% - 12px); /* Ajustement pour le padding */
+    padding: 6px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Important pour inclure le padding et la bordure dans la largeur totale */
+  }
+  
+  .phone-input {
+    display: flex;
+    align-items: center;
+  }
+  
+  .phone-input input[type="tel"] {
+    width: auto;
+    flex-grow: 1;
+    margin-right: 5px;
+  }
+  
+  .phone-input span {
+    margin: 0 5px;
+  }
+  
+  .checkbox-group label {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .checkbox-group input[type="checkbox"] {
+    margin-right: 0.5em;
+  }
+  
+  .btn-commander {
+    background-color: var(--couleur-principale);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-start;
+  }
+  
+  .btn-commander:hover {
+    background-color: #2980b9;
+  }
+  
+  footer {
+    text-align: center;
+    margin-top: 1em;
+    border-top: 1px solid #ddd;
+  }
+  
+  /* Styles d'interactivité */
+  input:focus, select:focus {
+    outline: none;
+    border-color: var(--couleur-principale);
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+  }
+  
+  /* Styles pour les messages d'erreur */
+  .erreur {
+    color: var(--couleur-erreur);
+    font-size: 0.9em;
+    margin-top: 0.2em;
+  }
+  
+  /* Ajout des classes de largeur */
+  .largeur-100 {
+    width: 100%;
+  }
+  
+  .largeur-50 {
+    width: 48%;
+  }
+  
+  .largeur-30 {
+    width: 30%;
+  }
+  
+  /* Styles pour l'accessibilité */
+  .screen-reader-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  
+  .screen-reader-only.focussable:active,
+  .screen-reader-only.focussable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    clip: auto;
+    overflow: visible;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px; /* Ajustez l'espacement entre les éléments si nécessaire */
+    margin-bottom: 10px; /* Ajoutez un espace en bas pour éviter que les éléments se touchent verticalement */
+}
+
+
+.radio-group input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+input + label:hover {
+    outline: 2px solid rgb(0, 140, 255);
+    border-radius: 2px;
+  }
+.radio-group input[type="radio"]:focus + label {
+    outline: 2px solid var(--couleur-principale);
+    border-radius: 4px;
+}
+  .radio-group input[type="radio"]:checked + label {
+    outline: 2px solid rgb(15, 15, 35);
+    border-radius: 4px;
+    background-color:rgb(236, 236, 236) ;
+    
+}
+
+ 
